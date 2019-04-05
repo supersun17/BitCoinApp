@@ -42,6 +42,9 @@ import ObjectMapper
 }
 **/
 
+/**
+Data model for BitCoinRecord
+**/
 struct BitCoinRecord: Mappable {
 	var updatedAt: String?
 	var usdDetails: PriceDetails?
@@ -57,6 +60,11 @@ struct BitCoinRecord: Mappable {
 		eurDetails <- map["bpi.EUR"]
 	}
 
+	/**
+	Factory method for convert raw JSON data into Mapped Object
+	- Parameters: raw JSON data
+	- Returns: BitCoinRecord optional
+	**/
 	static func factory(data: Any?) -> BitCoinRecord? {
 		if let record = Mapper<BitCoinRecord>().map(JSONObject: data) {
 			return record
@@ -64,16 +72,11 @@ struct BitCoinRecord: Mappable {
 			return nil
 		}
 	}
-
-	static func factoryToArray(data: Any?) -> [BitCoinRecord] {
-		if let recordsArray = Mapper<BitCoinRecord>().mapArray(JSONObject: data) {
-			return recordsArray
-		} else {
-			return []
-		}
-	}
 }
 
+/**
+Data model for PriceDetails for each currency.
+**/
 struct PriceDetails: Mappable {
 	var code: String?
 	var symbol: String?

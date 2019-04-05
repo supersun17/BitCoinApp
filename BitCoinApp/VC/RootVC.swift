@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+Handles the view stack setup. setupAndReturnRootVC() will return a control stack like this:
+NavigationVC -> {MainVC}
+Other VC and later be pushed into the stack
+**/
 class RootVC {
 	func setupAndReturnRootVC() -> UINavigationController {
 		let navVC = UINavigationController()

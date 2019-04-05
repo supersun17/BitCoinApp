@@ -11,6 +11,10 @@ import UIKit
 class MainVC: UIViewController {
 	@IBOutlet weak var todayView: TodayView!
 
+	/**
+	This variable is used to triger the first time TodayView display update.
+	This is because the first time API response comes in after the first time UI update. There will be 8 - 9 seconds wait time till the next UI update cycle. Thus the UI update has to be execute once here.
+	**/
 	lazy var executeOnce: Int = { [weak self] in
 		self?.updateDisplay()
 		return 0
@@ -34,6 +38,9 @@ class MainVC: UIViewController {
 	}
 }
 
+/**
+MainVC is the data provider, and data displayer of the BitCoin data. This is a MVC architecture App.
+**/
 extension MainVC: RealTimeCoordinatorDataProvider, RealTimeCoordinatorDataDisplayer {
 	func setupRealTimeCoorninator() {
 		realTimeCoordinator = RealTimeCoordinator.init(apiRequestInterval: TimingConstants.BCAPIRequestInterval,

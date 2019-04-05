@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+Display Today's BitCoin price info.
+Call updateBCPrice(symbol:, price:) to update its display
+**/
 class TodayView: UIView {
 	@IBOutlet var contentView: UIView!
 	@IBOutlet weak var labelTitle: UILabel!
@@ -31,6 +35,13 @@ class TodayView: UIView {
 		customInit()
 	}
 
+	/**
+	Update diplay to the designated value. And the time stamp on the bottom-right corner will be updated automatically according to the udpate time.
+	- Parameters:
+		- symbol: can be "EUR", or "&EURO;"
+		- price: the price value in Double
+	- Returns: void
+	**/
 	func updateBCPrice(symbol: String, price: Double) {
 		guard let decodedSymbol = symbol.decoded else {
 			print("nil symbol found at \(#file),\(#function)")

@@ -25,6 +25,10 @@ import ObjectMapper
 	}
 }
 **/
+
+/**
+Data model for HistoricalBPIRecord
+**/
 struct HistoricalBPIRecord: Mappable {
 	var bpi: [String:Double]?
 	var updatedAt: String?
@@ -36,6 +40,11 @@ struct HistoricalBPIRecord: Mappable {
 		updatedAt <- map["time.updated"]
 	}
 
+	/**
+	Factory method for convert raw JSON data into Mapped Object
+	- Parameters: raw JSON data
+	- Returns: HistoricalBPIRecord optional
+	**/
 	static func factory(data: Any?) -> HistoricalBPIRecord? {
 		if let bpiRecord = Mapper<HistoricalBPIRecord>().map(JSONObject: data) {
 			return bpiRecord

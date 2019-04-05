@@ -7,7 +7,6 @@ target 'BitCoinApp' do
 
   # Pods for BitCoinApp
   pod 'ObjectMapper', '~> 3.4'
-  pod 'RealmSwift', '~> 3.13.1'
   pod 'Alamofire', '~> 4.7'
 
   target 'BitCoinAppTests' do
