@@ -10,6 +10,7 @@ import UIKit
 
 class MainVC: UIViewController {
 	@IBOutlet weak var todayView: TodayView!
+	@IBOutlet weak var historyTableView: UITableView!
 
 	/**
 	This variable is used to triger the first time TodayView display update.
@@ -23,7 +24,15 @@ class MainVC: UIViewController {
 	var realTimeCoordinator: RealTimeCoordinator!
 	var serviceHandler: BitCoinServiceHandler!
 
+	var currency: Currency = .EUR
 	var currentBitCoinRecord: BitCoinRecord?
+	var historicalBPIRecord: HistoricalBPIRecord? {
+		didSet {
+			guard let priceDict = historicalBPIRecord?.bpi else { return }
+			sortedDateStringArray = priceDict.keys.sorted { $0 > $1 }
+		}
+	}
+	var sortedDateStringArray: [String] = []
 
 	override func loadView() {
 		Bundle.main.loadNibNamed("MainView", owner: self, options: nil)
@@ -33,8 +42,10 @@ class MainVC: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
+		navigationItem.title = "BitCoinApp"
 		serviceHandler = BitCoinServiceHandler()
 		setupRealTimeCoorninator()
+		setupTableView()
 	}
 }
 
@@ -67,4 +78,3 @@ extension MainVC: RealTimeCoordinatorDataProvider, RealTimeCoordinatorDataDispla
 		todayView.updateBCPrice(symbol: symbol, price: price)
 	}
 }
-

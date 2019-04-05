@@ -41,9 +41,9 @@ class NetworkTests: XCTestCase {
 
 	func testHistoryRequest() {
 		let today = Date()
-		let aweekAgo = Date.init(timeInterval: -3600 * 24 * 14, since: today)
+		let twoWeekAgo = Date.init(timeInterval: -3600 * 24 * 14, since: today)
 		let exp = expectation(description: "requestHistoryData started")
-		bitCoinServiceHandler!.requestHistoryData(aweekAgo, endDate: today, currency: "EUR") { (historicalBPIRecord) in
+		bitCoinServiceHandler!.requestHistoryData(twoWeekAgo, endDate: today, currency: "EUR") { (historicalBPIRecord) in
 			XCTAssertNotNil(historicalBPIRecord)
 			XCTAssertNotNil(historicalBPIRecord?.bpi)
 			exp.fulfill()

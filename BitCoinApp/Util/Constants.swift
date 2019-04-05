@@ -43,6 +43,18 @@ enum Endpoints: String {
 	}
 }
 
+enum Currency: String {
+	case USD, GBP, EUR
+
+	var symbol: String {
+		switch self {
+		case .EUR: return "€"
+		case .GBP: return "£"
+		case .USD: return "$"
+		}
+	}
+}
+
 struct TimingConstants {
 	static let BCAPIRequestInterval: TimeInterval = 60
 	static let BCDisplayRefreshInterval: TimeInterval = 10

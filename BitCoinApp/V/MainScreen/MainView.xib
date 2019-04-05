@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC" customModule="BitCoinApp" customModuleProvider="target">
             <connections>
+                <outlet property="historyTableView" destination="Etk-s2-64t" id="SuS-VC-ld2"/>
                 <outlet property="todayView" destination="UfY-Do-RGQ" id="Tkp-N4-vtE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vTS-bO-yI3"/>
             </connections>
@@ -28,12 +29,20 @@
                         <constraint firstAttribute="height" constant="100" id="4J7-Go-xwP"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Etk-s2-64t">
+                    <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="UfY-Do-RGQ" secondAttribute="top" id="GCz-1E-9bX"/>
                 <constraint firstItem="UfY-Do-RGQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="M03-Yn-9fh"/>
+                <constraint firstItem="Etk-s2-64t" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Sao-So-xUC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UfY-Do-RGQ" secondAttribute="trailing" id="bWg-jS-PF6"/>
+                <constraint firstItem="Etk-s2-64t" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="e2L-Tp-ExY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Etk-s2-64t" secondAttribute="trailing" id="oBY-jQ-Y93"/>
+                <constraint firstItem="Etk-s2-64t" firstAttribute="top" secondItem="UfY-Do-RGQ" secondAttribute="bottom" constant="8" id="xES-KJ-WKB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="53.600000000000001" y="101.19940029985008"/>

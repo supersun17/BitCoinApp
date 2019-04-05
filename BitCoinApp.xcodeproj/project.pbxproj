@@ -17,6 +17,7 @@
 		3A542F372257955D00C322BD /* TodayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A542F362257955D00C322BD /* TodayView.xib */; };
 		3A542F3A22579CA100C322BD /* RealTimeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */; };
 		3A542F3C2257A40A00C322BD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3B2257A40A00C322BD /* Protocols.swift */; };
+		3A542F3F2257E2E300C322BD /* MainVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */; };
 		3AEBFD122256FA2E00B56973 /* BitCoinServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */; };
 		3AEBFD142256FAFF00B56973 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD132256FAFF00B56973 /* Constants.swift */; };
 		3AEBFD172256FD9000B56973 /* BitCoinRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD162256FD9000B56973 /* BitCoinRecord.swift */; };
@@ -54,6 +55,7 @@
 		3A542F362257955D00C322BD /* TodayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayView.xib; sourceTree = "<group>"; };
 		3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeCoordinator.swift; sourceTree = "<group>"; };
 		3A542F3B2257A40A00C322BD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+TableView.swift"; sourceTree = "<group>"; };
 		3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinServiceHandler.swift; sourceTree = "<group>"; };
 		3AEBFD132256FAFF00B56973 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AEBFD162256FD9000B56973 /* BitCoinRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinRecord.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				3A357AA92256F0370099EE51 /* MainVC.swift */,
+				3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */,
 				3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */,
 			);
 			path = MainScreen;
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEBFD142256FAFF00B56973 /* Constants.swift in Sources */,
+				3A542F3F2257E2E300C322BD /* MainVC+TableView.swift in Sources */,
 				3AEBFD172256FD9000B56973 /* BitCoinRecord.swift in Sources */,
 				3A357AAA2256F0370099EE51 /* MainVC.swift in Sources */,
 				3A542F3C2257A40A00C322BD /* Protocols.swift in Sources */,

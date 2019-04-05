@@ -48,6 +48,6 @@ class TodayView: UIView {
 			return
 		}
 		labelCurrentPrice.text = "\(decodedSymbol)\(price)"
-		labelLastUpdatedAt.text = "Updated at: " + DateConvertor().dateToAMPMTimeString(Date())
+		labelLastUpdatedAt.text = "Updated at " + DateConvertor().dateToAMPMTimeString(Date())
 	}
 }
