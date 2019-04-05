@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum ServiceURL: String {
+enum Endpoints: String {
 	// https://api.coindesk.com/v1/bpi/currentprice.json
-	case currentprice = "https://api.coindesk.com/v1/bpi/currentprice.json"
+	case BCcurrentprice = "https://api.coindesk.com/v1/bpi/currentprice.json"
 	// https://api.coindesk.com/v1/bpi/historical/close.json?start=2013-09-01&end=2013-09-05?currency=EUR
-	case pastPeriod = "https://api.coindesk.com/v1/bpi/historical/close.json"
+	case BChistoricalPrice = "https://api.coindesk.com/v1/bpi/historical/close.json"
 
 	var url: URL? {
 		return URL.init(string: self.rawValue)
