@@ -32,7 +32,7 @@ class UtilTests: XCTestCase {
 		let startDate = Date.init(timeIntervalSince1970: 3600 * 12)
 		let endDate = Date.init(timeIntervalSince1970: 3600 * 24 + 1)
 
-		guard let url = ServiceURL.pastPeriod.withQuery(startDate, endDate: endDate, currency: "EUR") else {
+		guard let url = Endpoints.BChistoricalPrice.withQuery(startDate, endDate: endDate, currency: "EUR") else {
 			print("nil url found at \(#file),\(#function)")
 			return
 		}
