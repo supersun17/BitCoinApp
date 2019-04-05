@@ -26,6 +26,27 @@ class UtilTests: XCTestCase {
 		let convertor = DateConvertor()
 		let dateString = convertor.dateToUTCString(date)
 		XCTAssertEqual(dateString, "1970-01-01", "\(dateString) is incorrect")
+
+		let calendar = Calendar.init(identifier: .gregorian)
+		var components = calendar.dateComponents([.hour, .minute, .second], from: Date())
+
+		let amDate: Date = {
+			components.hour = 11
+			components.minute = 59
+			components.second = 59
+			return calendar.date(from: components)!
+		}()
+		let amDateString = convertor.dateToAMPMTimeString(amDate)
+
+		XCTAssertEqual(amDateString, "11:59:59 AM", "\(amDateString) is incorrect")
+		let pmDate: Date = {
+			components.hour = 12
+			components.minute = 00
+			components.second = 00
+			return calendar.date(from: components)!
+		}()
+		let pmDateString = convertor.dateToAMPMTimeString(pmDate)
+		XCTAssertEqual(pmDateString, "12:00:00 PM", "\(pmDateString) is incorrect")
 	}
 
 	func testPeriodURL() {
@@ -38,5 +59,14 @@ class UtilTests: XCTestCase {
 		}
 		let correctURL = URL.init(string: "https://api.coindesk.com/v1/bpi/historical/close.json?start=1970-01-01&end=1970-01-02&currency=EUR")!
 		XCTAssertEqual(url, correctURL, "\(url) is incorrect")
+	}
+
+	func testCurrencySymbol() {
+		let encodedSymbol = "&euro;"
+		guard let symbol = encodedSymbol.decoded else {
+			print("nil symbol found at \(#file),\(#function)")
+			return
+		}
+		XCTAssert(symbol == "€", "\(symbol) is incorrect")
 	}
 }

@@ -28,4 +28,8 @@ enum ServiceURL: String {
 	}
 }
 
+struct TimingConstants {
+	static let BCAPIRequestInterval: TimeInterval = 60
+	static let BCDisplayRefreshInterval: TimeInterval = 10
+}
 

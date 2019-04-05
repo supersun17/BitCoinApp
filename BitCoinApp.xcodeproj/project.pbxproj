@@ -10,17 +10,22 @@
 		3229776EAD891B83CEDC4314 /* Pods_BitCoinApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784E030D108FAC19EF6124B6 /* Pods_BitCoinApp.framework */; };
 		3A357AA82256F0370099EE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A357AA72256F0370099EE51 /* AppDelegate.swift */; };
 		3A357AAA2256F0370099EE51 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A357AA92256F0370099EE51 /* MainVC.swift */; };
-		3A357AAD2256F0370099EE51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A357AAB2256F0370099EE51 /* Main.storyboard */; };
 		3A357AAF2256F0390099EE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A357AAE2256F0390099EE51 /* Assets.xcassets */; };
 		3A357AB22256F0390099EE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A357AB02256F0390099EE51 /* LaunchScreen.storyboard */; };
 		3A357ABD2256F0390099EE51 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A357ABC2256F0390099EE51 /* NetworkTests.swift */; };
 		3A357AC92256F4900099EE51 /* WebServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A357AC82256F4900099EE51 /* WebServiceHandler.swift */; };
+		3A542F372257955D00C322BD /* TodayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A542F362257955D00C322BD /* TodayView.xib */; };
+		3A542F3A22579CA100C322BD /* RealTimeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */; };
+		3A542F3C2257A40A00C322BD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3B2257A40A00C322BD /* Protocols.swift */; };
 		3AEBFD122256FA2E00B56973 /* BitCoinServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */; };
 		3AEBFD142256FAFF00B56973 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD132256FAFF00B56973 /* Constants.swift */; };
 		3AEBFD172256FD9000B56973 /* BitCoinRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD162256FD9000B56973 /* BitCoinRecord.swift */; };
 		3AEBFD1922571B3F00B56973 /* HistoricalBPIRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD1822571B3F00B56973 /* HistoricalBPIRecord.swift */; };
 		3AEBFD1B22571CD600B56973 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD1A22571CD600B56973 /* Helpers.swift */; };
 		3AEBFD1D2257223400B56973 /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD1C2257223400B56973 /* UtilTests.swift */; };
+		3AEBFD2022577F7000B56973 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEBFD1F22577F7000B56973 /* MainView.xib */; };
+		3AEBFD2222577FFC00B56973 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD2122577FFC00B56973 /* RootVC.swift */; };
+		3AEBFD242257925800B56973 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD232257925800B56973 /* TodayView.swift */; };
 		3FD526D2D53358CF1FA8BCEA /* Pods_BitCoinAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACF958D0EE7E95C42305CB8 /* Pods_BitCoinAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +44,6 @@
 		3A357AA42256F0370099EE51 /* BitCoinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A357AA72256F0370099EE51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A357AA92256F0370099EE51 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		3A357AAC2256F0370099EE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A357AAE2256F0390099EE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A357AB12256F0390099EE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A357AB32256F0390099EE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,12 +51,18 @@
 		3A357ABC2256F0390099EE51 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		3A357ABE2256F0390099EE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A357AC82256F4900099EE51 /* WebServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHandler.swift; sourceTree = "<group>"; };
+		3A542F362257955D00C322BD /* TodayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayView.xib; sourceTree = "<group>"; };
+		3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeCoordinator.swift; sourceTree = "<group>"; };
+		3A542F3B2257A40A00C322BD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinServiceHandler.swift; sourceTree = "<group>"; };
 		3AEBFD132256FAFF00B56973 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AEBFD162256FD9000B56973 /* BitCoinRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinRecord.swift; sourceTree = "<group>"; };
 		3AEBFD1822571B3F00B56973 /* HistoricalBPIRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalBPIRecord.swift; sourceTree = "<group>"; };
 		3AEBFD1A22571CD600B56973 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3AEBFD1C2257223400B56973 /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
+		3AEBFD1F22577F7000B56973 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		3AEBFD2122577FFC00B56973 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		3AEBFD232257925800B56973 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		737337B30AD4D47400F0F9B3 /* Pods-BitCoinApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoinApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoinApp/Pods-BitCoinApp.release.xcconfig"; sourceTree = "<group>"; };
 		784E030D108FAC19EF6124B6 /* Pods_BitCoinApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitCoinApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D1DEB7137A874DC791AEFD /* Pods-BitCoinApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoinApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoinApp/Pods-BitCoinApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +116,8 @@
 				3A357AC72256F4660099EE51 /* Util */,
 				3AEBFD152256FD6E00B56973 /* M */,
 				3AEBFD0F2256F9B300B56973 /* VC */,
-				3A357AAB2256F0370099EE51 /* Main.storyboard */,
+				3AEBFD252257936E00B56973 /* V */,
+				3A542F3D2257A41400C322BD /* Protocols */,
 				3A357AA72256F0370099EE51 /* AppDelegate.swift */,
 				3A357AAE2256F0390099EE51 /* Assets.xcassets */,
 				3A357AB02256F0390099EE51 /* LaunchScreen.storyboard */,
@@ -136,10 +147,28 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		3A542F38225799AE00C322BD /* TodayView */ = {
+			isa = PBXGroup;
+			children = (
+				3AEBFD232257925800B56973 /* TodayView.swift */,
+				3A542F362257955D00C322BD /* TodayView.xib */,
+			);
+			path = TodayView;
+			sourceTree = "<group>";
+		};
+		3A542F3D2257A41400C322BD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3A542F3B2257A40A00C322BD /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		3AEBFD0F2256F9B300B56973 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				3A357AA92256F0370099EE51 /* MainVC.swift */,
+				3AEBFD1E22577F0D00B56973 /* MainScreen */,
+				3AEBFD2122577FFC00B56973 /* RootVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -151,6 +180,32 @@
 				3AEBFD1822571B3F00B56973 /* HistoricalBPIRecord.swift */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		3AEBFD1E22577F0D00B56973 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3A357AA92256F0370099EE51 /* MainVC.swift */,
+				3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		3AEBFD252257936E00B56973 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				3AEBFD262257938700B56973 /* MainScreen */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		3AEBFD262257938700B56973 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3AEBFD1F22577F7000B56973 /* MainView.xib */,
+				3A542F38225799AE00C322BD /* TodayView */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		3D14BFE2D02D082298C06D1F /* Frameworks */ = {
@@ -257,9 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEBFD2022577F7000B56973 /* MainView.xib in Resources */,
 				3A357AB22256F0390099EE51 /* LaunchScreen.storyboard in Resources */,
+				3A542F372257955D00C322BD /* TodayView.xib in Resources */,
 				3A357AAF2256F0390099EE51 /* Assets.xcassets in Resources */,
-				3A357AAD2256F0370099EE51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,10 +411,14 @@
 				3AEBFD142256FAFF00B56973 /* Constants.swift in Sources */,
 				3AEBFD172256FD9000B56973 /* BitCoinRecord.swift in Sources */,
 				3A357AAA2256F0370099EE51 /* MainVC.swift in Sources */,
+				3A542F3C2257A40A00C322BD /* Protocols.swift in Sources */,
 				3AEBFD1B22571CD600B56973 /* Helpers.swift in Sources */,
 				3AEBFD122256FA2E00B56973 /* BitCoinServiceHandler.swift in Sources */,
 				3A357AC92256F4900099EE51 /* WebServiceHandler.swift in Sources */,
+				3AEBFD2222577FFC00B56973 /* RootVC.swift in Sources */,
 				3AEBFD1922571B3F00B56973 /* HistoricalBPIRecord.swift in Sources */,
+				3A542F3A22579CA100C322BD /* RealTimeCoordinator.swift in Sources */,
+				3AEBFD242257925800B56973 /* TodayView.swift in Sources */,
 				3A357AA82256F0370099EE51 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,14 +443,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3A357AAB2256F0370099EE51 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A357AAC2256F0370099EE51 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3A357AB02256F0390099EE51 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -526,6 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VS7LM5WTUA;
 				INFOPLIST_FILE = BitCoinApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VS7LM5WTUA;
 				INFOPLIST_FILE = BitCoinApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
