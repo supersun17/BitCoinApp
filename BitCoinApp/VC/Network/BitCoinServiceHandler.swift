@@ -35,10 +35,10 @@ class BitCoinServiceHandler: WebserviceHandler {
 		- completion: closure to execute when result has been retreived. A HistoricalBPIRecord optional will be passed as argument.
 	- Returns: void
 	**/
-	func requestHistoryData(_ startDate: Date, endDate: Date, currency: String) {
-		guard let url = Endpoints.BChistoricalPrice.withQuery(startDate, endDate: endDate, currency: currency) else { return }
+	func requestHistoryData(_ startDate: Date, endDate: Date, currency: Currency) {
+		guard let url = Endpoints.BChistoricalPrice.withQuery(startDate, endDate: endDate, currency: currency.rawValue) else { return }
 		requestJSON(withURL: url, method: .get) { [weak self] data in
-			self?.delegate?.didReceiveHistoricalBitCoinData(HistoricalBPIRecord.factory(data: data))
+			self?.delegate?.didReceiveHistoricalBitCoinData(forCurrency: currency, HistoricalBPIRecord.factory(data: data))
 		}
 	}
 }

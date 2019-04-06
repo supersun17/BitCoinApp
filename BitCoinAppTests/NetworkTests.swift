@@ -48,7 +48,7 @@ class NetworkTests: XCTestCase, BitCoinServiceDelegate {
 		let today = QuickDate.Today.create()
 		let twoWeekAgo = QuickDate.TwoWeeksAgo.create()
 		historyRequestExp = expectation(description: "requestHistoryData started")
-		bitCoinServiceHandler!.requestHistoryData(twoWeekAgo, endDate: today, currency: "EUR")
+		bitCoinServiceHandler!.requestHistoryData(twoWeekAgo, endDate: today, currency: Currency.EUR)
 		waitForExpectations(timeout: 3) { error in
 			if let error = error {
 				XCTFail("requestHistoryData timeout. error: \(error)")
@@ -56,7 +56,7 @@ class NetworkTests: XCTestCase, BitCoinServiceDelegate {
 		}
 	}
 
-	func didReceiveHistoricalBitCoinData(_ record: HistoricalBPIRecord?) {
+	func didReceiveHistoricalBitCoinData(forCurrency: Currency, _ record: HistoricalBPIRecord?) {
 		XCTAssertNotNil(record)
 		XCTAssertNotNil(record?.bpi)
 		historyRequestExp.fulfill()
