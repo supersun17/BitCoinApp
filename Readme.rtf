@@ -1,9 +1,7 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\csgenericrgb\c100000\c100000\c100000;}
 \margl1440\margr1440\vieww10800\viewh11260\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -18,26 +16,24 @@ Historical data display\
 \
 Components List:\
 V: 	MainView, TodayView, OtherdaysTableView, OtherdayTableViewCell, DetailsView\
-VC: 	NavigationVC, MainVC, DetailsVC\
-M: 	BitCoinRecord\
-Util: 	Network, DataPersistence, RealtimeCoordinator\
+VC: 	NavigationVC, MainVC, DetailsVC, Network, RealtimeCoordinator\
+M: 	BitCoinRecord, \cf2 \cb3 HistoricalBPIRecord\cf0 \cb1 \
+Util: 	\'85\
 \
 Third party Library: ObjectMapper, Alamofire\
 Service: Coindesk API\
 \
 Roadmap:\
-\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
-\ls1\ilvl0\cf0 {\listtext	1.	}Network + Coindesk API + ObjectMapper\
-{\listtext	2.	}Unit test: network\
-{\listtext	3.	}RealtimeCoordinator\
-{\listtext	4.	}Test: realtime update\
-{\listtext	5.	}MainView, TodayView\
-{\listtext	6.	}Test: today bitcoin price realtime display\
-{\listtext	7.	}Unit test: new helpers\
-{\listtext	8.	}OtherdaysTableView, OtherdayTableViewCell\
-{\listtext	9.	}Test: history bitcoin price display\
-{\listtext	10.	}DetailsView\
-{\listtext	11.	}Device Rotation check\
-{\listtext	12.	}Test: Other currencies display\
-{\listtext	13.	}Test: Overall inspection\
+Network + Coindesk API + ObjectMapper\
+Unit test: network, util\
+RealtimeCoordinator\
+MainView, TodayView\
+Unit test: util\
+Test: today bitcoin price realtime display\
+OtherdaysTableView, OtherdayTableViewCell\
+Test: history bitcoin price display\
+DetailsView\
+Test: ServiceError\
+Test: Other currencies display\
+Test: Overall inspection\
 }

@@ -22,6 +22,7 @@ class MainVC: UIViewController {
 	}()
 
 	var realTimeCoordinator: RealTimeCoordinator!
+
 	var serviceHandler: BitCoinServiceHandler!
 
 	var currency: Currency = .EUR
@@ -43,31 +44,21 @@ class MainVC: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 
 		navigationItem.title = "BitCoinApp"
-		serviceHandler = BitCoinServiceHandler()
+		setupServiceHandler()
 		setupRealTimeCoorninator()
 		setupTableView()
 	}
-}
 
-/**
-MainVC is the data provider, and data displayer of the BitCoin data. This is a MVC architecture App.
-**/
-extension MainVC: RealTimeCoordinatorDataProvider, RealTimeCoordinatorDataDisplayer {
-	func setupRealTimeCoorninator() {
-		realTimeCoordinator = RealTimeCoordinator.init(apiRequestInterval: TimingConstants.BCAPIRequestInterval,
-													   displayRefreshInterval: TimingConstants.BCDisplayRefreshInterval)
-		realTimeCoordinator.startDataUpdate(with: self)
-		realTimeCoordinator.startDisplayUpdate(with: self)
+	func setupServiceHandler() {
+		serviceHandler = BitCoinServiceHandler()
+		serviceHandler.delegate = self
 	}
 
-	func updateData() {
-		serviceHandler.requestDataForToday { [weak self] (record) in
-			self?.currentBitCoinRecord = record
-			_ = self?.executeOnce
-		}
+	func requestTodayBitCoinData() {
+		serviceHandler.requestDataForToday()
 	}
 
-	func updateDisplay() {
+	func updateTodayViewDisplay() {
 		guard
 			let record = currentBitCoinRecord,
 			let symbol = record.eurDetails?.symbol,
@@ -77,4 +68,23 @@ extension MainVC: RealTimeCoordinatorDataProvider, RealTimeCoordinatorDataDispla
 		}
 		todayView.updateBCPrice(symbol: symbol, price: price)
 	}
+
+	func requestHistoricalBitCoinData() {
+		let today = QuickDate.Today.create()
+		let twoWeekAgo = QuickDate.TwoWeeksAgo.create()
+		serviceHandler.requestHistoryData(twoWeekAgo, endDate: today, currency: currency.rawValue)
+	}
 }
+
+extension MainVC: BitCoinServiceDelegate {
+	func didReceiveTodayBitCoinData(_ record: BitCoinRecord?) {
+		currentBitCoinRecord = record
+		_ = executeOnce
+	}
+
+	func didReceiveHistoricalBitCoinData(_ record: HistoricalBPIRecord?) {
+		historicalBPIRecord = record
+		historyTableView.reloadData()
+	}
+}
+

@@ -68,5 +68,12 @@ class UtilTests: XCTestCase {
 			return
 		}
 		XCTAssert(symbol == "€", "\(symbol) is incorrect")
+
+		let nonEncodedSymbol = "€"
+		guard let plainSymbol = nonEncodedSymbol.decoded else {
+			print("nil symbol found at \(#file),\(#function)")
+			return
+		}
+		XCTAssert(plainSymbol == "€", "\(plainSymbol) is incorrect")
 	}
 }

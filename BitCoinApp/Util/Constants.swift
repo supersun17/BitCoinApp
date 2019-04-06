@@ -60,3 +60,17 @@ struct TimingConstants {
 	static let BCDisplayRefreshInterval: TimeInterval = 10
 }
 
+enum QuickDate {
+	case Today
+	case TwoWeeksAgo
+
+	func create() -> Date {
+		switch self {
+		case .Today:
+			return Date()
+		case .TwoWeeksAgo:
+			return Date.init(timeInterval: -3600 * 24 * 14, since: Date())
+		}
+	}
+}
+

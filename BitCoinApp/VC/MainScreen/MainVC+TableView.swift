@@ -8,16 +8,14 @@
 
 import UIKit
 
+/**
+MainVC is the delegate and datasource of the tableView.
+**/
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
 	func setupTableView() {
 		historyTableView.delegate = self
 		historyTableView.dataSource = self
-		let today = Date()
-		let twoWeekAgo = Date.init(timeInterval: -3600 * 24 * 14, since: today)
-		serviceHandler.requestHistoryData(twoWeekAgo, endDate: today, currency: currency.rawValue) { [weak self] (historicalBPIRecord) in
-			self?.historicalBPIRecord = historicalBPIRecord
-			self?.historyTableView.reloadData()
-		}
+		requestHistoricalBitCoinData()
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

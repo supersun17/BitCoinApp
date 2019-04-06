@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class WebserviceHandler {
-	static func request(withURL url: URL, method: HTTPMethod, completion: @escaping (_ data: Any?) -> Void) {
+	func requestJSON(withURL url: URL, method: HTTPMethod, completion: @escaping (_ data: Any?) -> Void) {
 		Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
 			switch response.result {
 			case .success(let data):
