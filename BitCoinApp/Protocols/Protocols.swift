@@ -19,4 +19,5 @@ protocol RealTimeCoordinatorDataDisplayer: class {
 protocol BitCoinServiceDelegate: class  {
 	func didReceiveTodayBitCoinData(_ record: BitCoinRecord?)
 	func didReceiveHistoricalBitCoinData(forCurrency: Currency, _ record: HistoricalBPIRecord?)
+	func didReceiveError(_ error: Error)
 }

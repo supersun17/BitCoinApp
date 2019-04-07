@@ -10,15 +10,14 @@ import Foundation
 import Alamofire
 
 class WebserviceHandler {
-	func requestJSON(withURL url: URL, method: HTTPMethod, completion: @escaping (_ data: Any?) -> Void) {
+	func requestJSON(withURL url: URL, method: HTTPMethod, completion: @escaping (_ data: Any?, _ error: Error?) -> Void) {
 		Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
 			switch response.result {
 			case .success(let data):
-				completion(data)
+				completion(data, nil)
 				break
 			case .failure(let error):
-				print(error)
-				completion(nil)
+				completion(nil, error)
 				break
 			}
 		}

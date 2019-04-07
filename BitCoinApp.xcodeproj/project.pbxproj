@@ -149,10 +149,10 @@
 		3A357AC72256F4660099EE51 /* Util+Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */,
 				3A357AC82256F4900099EE51 /* WebServiceHandler.swift */,
 				3AEBFD1A22571CD600B56973 /* Helpers.swift */,
 				3AEBFD132256FAFF00B56973 /* Constants.swift */,
-				3A542F3922579CA100C322BD /* RealTimeCoordinator.swift */,
 			);
 			path = "Util+Helper";
 			sourceTree = "<group>";

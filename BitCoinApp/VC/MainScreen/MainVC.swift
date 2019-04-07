@@ -138,5 +138,9 @@ extension MainVC: BitCoinServiceDelegate {
 			NotificationCenter.default.post(name: CustomNotificationName.BPIDidUpdate, object: nil)
 		}
 	}
+
+	func didReceiveError(_ error: Error) {
+		print(error.localizedDescription)
+	}
 }
 

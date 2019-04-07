@@ -21,8 +21,12 @@ class BitCoinServiceHandler: WebserviceHandler {
 	**/
 	func requestDataForToday() {
 		guard let url = Endpoints.BCcurrentprice.url else { return }
-		requestJSON(withURL: url, method: .get) { [weak self] data in
-			self?.delegate?.didReceiveTodayBitCoinData(BitCoinRecord.factory(data: data))
+		requestJSON(withURL: url, method: .get) { [weak self] data, error in
+			if error == nil {
+				self?.delegate?.didReceiveTodayBitCoinData(BitCoinRecord.factory(data: data))
+			} else {
+				self?.delegate?.didReceiveError(error!)
+			}
 		}
 	}
 
@@ -37,8 +41,12 @@ class BitCoinServiceHandler: WebserviceHandler {
 	**/
 	func requestHistoryData(_ startDate: Date, endDate: Date, currency: Currency) {
 		guard let url = Endpoints.BChistoricalPrice.withQuery(startDate, endDate: endDate, currency: currency.rawValue) else { return }
-		requestJSON(withURL: url, method: .get) { [weak self] data in
-			self?.delegate?.didReceiveHistoricalBitCoinData(forCurrency: currency, HistoricalBPIRecord.factory(data: data))
+		requestJSON(withURL: url, method: .get) { [weak self] data, error in
+			if error == nil {
+				self?.delegate?.didReceiveHistoricalBitCoinData(forCurrency: currency, HistoricalBPIRecord.factory(data: data))
+			} else {
+				self?.delegate?.didReceiveError(error!)
+			}
 		}
 	}
 }
