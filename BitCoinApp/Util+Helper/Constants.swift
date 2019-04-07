@@ -73,7 +73,3 @@ enum QuickDate {
 		}
 	}
 }
-
-struct CustomNotificationName {
-	static let BPIDidUpdate = Notification.Name.init("com.ming.BPIDataDidupdate")
-}

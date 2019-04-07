@@ -19,8 +19,6 @@
 		3A542F3C2257A40A00C322BD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3B2257A40A00C322BD /* Protocols.swift */; };
 		3A542F3F2257E2E300C322BD /* MainVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */; };
 		3A542F422259233000C322BD /* MainVC+RealtimeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F412259233000C322BD /* MainVC+RealtimeCoordinator.swift */; };
-		3A542F4622592EBC00C322BD /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A542F4522592EBC00C322BD /* DetailsView.xib */; };
-		3A542F4822592F6700C322BD /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F4722592F6700C322BD /* DetailsVC.swift */; };
 		3A542F4A225932B700C322BD /* HistoricalBPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F49225932B700C322BD /* HistoricalBPIManager.swift */; };
 		3AEBFD122256FA2E00B56973 /* BitCoinServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */; };
 		3AEBFD142256FAFF00B56973 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD132256FAFF00B56973 /* Constants.swift */; };
@@ -61,8 +59,6 @@
 		3A542F3B2257A40A00C322BD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+TableView.swift"; sourceTree = "<group>"; };
 		3A542F412259233000C322BD /* MainVC+RealtimeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+RealtimeCoordinator.swift"; sourceTree = "<group>"; };
-		3A542F4522592EBC00C322BD /* DetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsView.xib; sourceTree = "<group>"; };
-		3A542F4722592F6700C322BD /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		3A542F49225932B700C322BD /* HistoricalBPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalBPIManager.swift; sourceTree = "<group>"; };
 		3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinServiceHandler.swift; sourceTree = "<group>"; };
 		3AEBFD132256FAFF00B56973 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -182,26 +178,9 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		3A542F4322592E0C00C322BD /* DetailsScreen */ = {
-			isa = PBXGroup;
-			children = (
-				3A542F4722592F6700C322BD /* DetailsVC.swift */,
-			);
-			path = DetailsScreen;
-			sourceTree = "<group>";
-		};
-		3A542F4422592E1F00C322BD /* DetailsScreen */ = {
-			isa = PBXGroup;
-			children = (
-				3A542F4522592EBC00C322BD /* DetailsView.xib */,
-			);
-			path = DetailsScreen;
-			sourceTree = "<group>";
-		};
 		3AEBFD0F2256F9B300B56973 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				3A542F4322592E0C00C322BD /* DetailsScreen */,
 				3AEBFD1E22577F0D00B56973 /* MainScreen */,
 				3A542F4022591FCC00C322BD /* Network */,
 				3AEBFD2122577FFC00B56973 /* RootVC.swift */,
@@ -232,7 +211,6 @@
 		3AEBFD252257936E00B56973 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				3A542F4422592E1F00C322BD /* DetailsScreen */,
 				3AEBFD262257938700B56973 /* MainScreen */,
 			);
 			path = V;
@@ -355,7 +333,6 @@
 				3A357AB22256F0390099EE51 /* LaunchScreen.storyboard in Resources */,
 				3A542F372257955D00C322BD /* TodayView.xib in Resources */,
 				3A357AAF2256F0390099EE51 /* Assets.xcassets in Resources */,
-				3A542F4622592EBC00C322BD /* DetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +425,6 @@
 				3A542F3F2257E2E300C322BD /* MainVC+TableView.swift in Sources */,
 				3AEBFD172256FD9000B56973 /* BitCoinRecord.swift in Sources */,
 				3A357AAA2256F0370099EE51 /* MainVC.swift in Sources */,
-				3A542F4822592F6700C322BD /* DetailsVC.swift in Sources */,
 				3A542F3C2257A40A00C322BD /* Protocols.swift in Sources */,
 				3AEBFD1B22571CD600B56973 /* Helpers.swift in Sources */,
 				3A542F422259233000C322BD /* MainVC+RealtimeCoordinator.swift in Sources */,

@@ -47,7 +47,7 @@ class TodayView: UIView {
 			print("nil symbol found at \(#file),\(#function)")
 			return
 		}
-		labelCurrentPrice.text = "\(decodedSymbol)\(price)"
+		labelCurrentPrice.text = "\(decodedSymbol)\(price.twoDigitsAccuracyString)"
 		labelLastUpdatedAt.text = "Updated at " + DateConvertor().dateToAMPMTimeString(Date())
 	}
 }

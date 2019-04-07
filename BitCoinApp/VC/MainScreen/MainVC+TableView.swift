@@ -24,15 +24,14 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		let dateString = historicalBPIManager.dateStringArray[indexPath.row]
-		guard let price = historicalBPIManager.getPrice(forDate: dateString, currency: mainCurrency) else {
-			return
-		}
-		cell.textLabel?.text = "\(mainCurrency.symbol)\(price)"
+		let textArray = allCurrencies.map { getDisplayText(forDate: dateString, currency: $0) }
+		cell.textLabel?.text = textArray.joined(separator: "\t")
 		cell.detailTextLabel?.text = "\(dateString)"
 	}
 
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let dateString = historicalBPIManager.dateStringArray[indexPath.row]
-		pushDetailsScreen(for: dateString)
+	func getDisplayText(forDate dateString: String, currency: Currency) -> String {
+		let price = historicalBPIManager.getPrice(forDate: dateString, currency: currency)
+		let priceString = (price == nil) ? ("loading"):(price!.twoDigitsAccuracyString)
+		return currency.symbol + ":" + priceString
 	}
 }

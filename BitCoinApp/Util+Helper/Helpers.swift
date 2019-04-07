@@ -61,3 +61,9 @@ extension String {
 		return String(attributedString.string)
 	}
 }
+
+extension Double {
+	var twoDigitsAccuracyString: String {
+		return String(format: "%.2f", self)
+	}
+}
