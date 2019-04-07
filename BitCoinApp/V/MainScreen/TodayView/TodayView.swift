@@ -43,11 +43,7 @@ class TodayView: UIView {
 	- Returns: void
 	**/
 	func updateBCPrice(symbol: String, price: Double) {
-		guard let decodedSymbol = symbol.decoded else {
-			print("nil symbol found at \(#file),\(#function)")
-			return
-		}
-		labelCurrentPrice.text = "\(decodedSymbol)\(price)"
+		labelCurrentPrice.text = "\(symbol)\(price.twoDigitsAccuracyString)"
 		labelLastUpdatedAt.text = "Updated at " + DateConvertor().dateToAMPMTimeString(Date())
 	}
 }

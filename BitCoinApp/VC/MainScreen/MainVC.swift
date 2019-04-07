@@ -25,7 +25,8 @@ class MainVC: UIViewController {
 	var serviceHandler: BitCoinServiceHandler! // For CoinDesk API service
 	var historicalBPIManager: HistoricalBPIManager! // For multi-currency BPI data merging/retrieving control
 
-	var mainCurrency: Currency = .EUR // The default Currency mentioned as project requirement
+	let allCurrencies = [Currency.USD, Currency.EUR, Currency.GBP]
+	var mainCurrency: Currency = .USD // The default Currency mentioned as project requirement
 
 	var currentBitCoinRecord: BitCoinRecord? // Today's current BitCoin data from Coindesk
 
@@ -85,9 +86,9 @@ class MainVC: UIViewController {
 	func requestHistoricalBitCoinData() {
 		let today = QuickDate.Today.create()
 		let twoWeekAgo = QuickDate.TwoWeeksAgo.create()
-		serviceHandler.requestHistoryData(twoWeekAgo, endDate: today, currency: Currency.EUR)
-		serviceHandler.requestHistoryData(twoWeekAgo, endDate: today, currency: Currency.USD)
-		serviceHandler.requestHistoryData(twoWeekAgo, endDate: today, currency: Currency.GBP)
+		for c in allCurrencies {
+			serviceHandler.requestHistoryData(twoWeekAgo, endDate: today, currency: c)
+		}
 	}
 
 	/**
@@ -98,25 +99,12 @@ class MainVC: UIViewController {
 	func updateTodayViewDisplay() {
 		guard
 			let record = currentBitCoinRecord,
-			let symbol = record.eurDetails?.symbol,
-			let price = record.eurDetails?.rateFloat
+			let symbol = record.usdDetails?.symbol?.decoded,
+			let price = record.usdDetails?.rateFloat
 			else {
 				return
 		}
 		todayView.updateBCPrice(symbol: symbol, price: price)
-	}
-
-	/**
-	Call it with date string to push DetailsVC into navigation stack. The date string is used on the navigationBar title.
-	- Parameters:
-		- dateString: the date for the BPI data about to show
-	- Returns: -
-	**/
-	func pushDetailsScreen(for dateString: String) {
-		let detailsVC = DetailsVC()
-		detailsVC.historicalBPIManager = historicalBPIManager
-		detailsVC.featuringDateString = dateString
-		navigationController?.pushViewController(detailsVC, animated: true)
 	}
 }
 
@@ -132,10 +120,7 @@ extension MainVC: BitCoinServiceDelegate {
 			/// - Note: main queue is a serial queue, writing data on this queue raise cause multi-threading concern
 			historicalBPIManager.addBPIData(forCurrency: currency, hitoricalBPIRecord: record)
 			/// - Note: MainVC historical tableView only shows EUR
-			if currency == mainCurrency {
-				historyTableView.reloadData()
-			}
-			NotificationCenter.default.post(name: CustomNotificationName.BPIDidUpdate, object: nil)
+			historyTableView.reloadData()
 		}
 	}
 
