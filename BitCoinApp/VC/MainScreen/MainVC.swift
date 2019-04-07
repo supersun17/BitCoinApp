@@ -99,8 +99,8 @@ class MainVC: UIViewController {
 	func updateTodayViewDisplay() {
 		guard
 			let record = currentBitCoinRecord,
-			let symbol = record.eurDetails?.symbol,
-			let price = record.eurDetails?.rateFloat
+			let symbol = record.usdDetails?.symbol?.decoded,
+			let price = record.usdDetails?.rateFloat
 			else {
 				return
 		}
