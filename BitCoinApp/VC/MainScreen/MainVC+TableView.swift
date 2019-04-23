@@ -17,9 +17,13 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "OtherDayCell")
-		cell.selectionStyle = .none
-		return cell
+		var cell = tableView.dequeueReusableCell(withIdentifier: "OtherDayCell")
+		if cell == nil {
+			cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "OtherDayCell")
+		}
+
+		cell!.selectionStyle = .none
+		return cell!
 	}
 
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
