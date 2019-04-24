@@ -1,4 +1,4 @@
-framework module Pods_BitCoinApp {
+module Pods_BitCoinApp {
   umbrella header "Pods-BitCoinApp-umbrella.h"
 
   export *

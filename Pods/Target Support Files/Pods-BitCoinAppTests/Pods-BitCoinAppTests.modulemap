@@ -1,4 +1,4 @@
-framework module Pods_BitCoinAppTests {
+module Pods_BitCoinAppTests {
   umbrella header "Pods-BitCoinAppTests-umbrella.h"
 
   export *
