@@ -61,4 +61,6 @@ class NetworkTests: XCTestCase, BitCoinServiceDelegate {
 		XCTAssertNotNil(record?.bpi)
 		historyRequestExp.fulfill()
 	}
+
+	func didReceiveError(_ error: Error) {}
 }
