@@ -18,6 +18,10 @@ class TodayView: UIView {
 	@IBOutlet weak var labelCurrentPrice: UILabel!
 	@IBOutlet weak var labelLastUpdatedAt: UILabel!
 
+	let heartbeatPosColor = UIColor.init(red: 0.2941, green: 0.8274, blue: 0.1490, alpha: 1.0)
+	let heartbeatNegColor = UIColor.init(red: 0.9686, green: 0.2901, blue: 0.2392, alpha: 1.0)
+	let normalColor = UIColor.init(red: 0.9686, green: 0.2901, blue: 0.2392, alpha: 0.0)
+
 	private func customInit() {
 		Bundle.main.loadNibNamed("TodayView", owner: self, options: nil)
 		addSubview(contentView)
@@ -42,8 +46,13 @@ class TodayView: UIView {
 		- price: the price value in Double
 	- Returns: void
 	**/
-	func updateBCPrice(symbol: String, price: Double) {
+	func updateBCPrice(symbol: String, price: Double, priceState: Bool) {
 		labelCurrentPrice.text = "\(symbol)\(price.twoDigitsAccuracyString)"
 		labelLastUpdatedAt.text = "Updated at " + DateConvertor().dateToAMPMTimeString(Date())
+		let animator = CABasicAnimation.init(keyPath: "backgroundColor")
+		animator.fromValue = (priceState) ? (heartbeatPosColor.cgColor):(heartbeatNegColor.cgColor)
+		animator.toValue = normalColor.cgColor
+		animator.duration = TimingConstants.TodayViewHeartBeatInterval
+		contentView.layer.add(animator, forKey: "heartbeat")
 	}
 }

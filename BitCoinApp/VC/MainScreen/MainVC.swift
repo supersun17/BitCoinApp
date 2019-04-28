@@ -29,6 +29,7 @@ class MainVC: UIViewController {
 	var mainCurrency: Currency = .USD // The default Currency mentioned as project requirement
 
 	var currentBitCoinRecord: BitCoinRecord? // Today's current BitCoin data from Coindesk
+	var priceState: Bool = true
 
 
 	override func loadView() {
@@ -104,13 +105,16 @@ class MainVC: UIViewController {
 			else {
 				return
 		}
-		todayView.updateBCPrice(symbol: symbol, price: price)
+		todayView.updateBCPrice(symbol: symbol, price: price, priceState: priceState)
 	}
 }
 
 extension MainVC: BitCoinServiceDelegate {
 	func didReceiveTodayBitCoinData(_ record: BitCoinRecord?) {
+		let oldPrice = currentBitCoinRecord?.usdDetails?.rateFloat ?? 0.0
+		let newPrice = record?.usdDetails?.rateFloat ?? 0.0
 		currentBitCoinRecord = record
+		priceState = (newPrice >= oldPrice)
 		_ = executeOnce
 	}
 

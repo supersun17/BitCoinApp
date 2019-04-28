@@ -58,6 +58,7 @@ enum Currency: String {
 struct TimingConstants {
 	static let BCAPIRequestInterval: TimeInterval = 60
 	static let BCDisplayRefreshInterval: TimeInterval = 10
+	static let TodayViewHeartBeatInterval: TimeInterval = 1.5
 }
 
 enum QuickDate {
