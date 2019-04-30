@@ -1,8 +1,7 @@
-# Bitcoin price App Project
+# Bitcoin price App Project - EPIC 1
+Bitcoin price display
 
-Due to the simplicity of this project, MVC is chosen to be the architecture.  
-
-## Core features:
+## Stories:
 Realtime price update for today  
 Historical price display in EUR  
 Multi-currency history bpi display for a spcific day  
@@ -33,3 +32,31 @@ DetailsView, HistoricalBPIManager
 Test: detailsView other ther currencies display  
 Test: ServiceError  
 
+
+# Bitcoin price App Project - EPIC 2
+Some native features
+
+## Stories:
+Historical price can be viewed as a chart
+Historical price can be viewed offline once it's been downloaded
+Introduce paging for Historical price display
+There should be more details about Bitcoin if user left swipe a cell swipe to see more
+There should be a tutorial for swipe to see more
+
+## Components List:
+**V**:  
+**VC**:  
+**M**:  
+**Util + Helper**:  
+**Third party Library**:  
+**Service**:  
+
+## Development timeline:  
+
+
+# Bitcoin price App Project - EPIC 3
+Monitor Ethereum as well
+
+
+# Bitcoin price App Project - EPIC 4
+Siri integration

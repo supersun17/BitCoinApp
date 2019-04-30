@@ -27,6 +27,7 @@
 		3A542F3F2257E2E300C322BD /* MainVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */; };
 		3A542F422259233000C322BD /* MainVC+RealtimeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F412259233000C322BD /* MainVC+RealtimeCoordinator.swift */; };
 		3A542F4A225932B700C322BD /* HistoricalBPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A542F49225932B700C322BD /* HistoricalBPIManager.swift */; };
+		3A56055A2278A9A800230AFB /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A5605592278A9A800230AFB /* Readme.md */; };
 		3AEBFD122256FA2E00B56973 /* BitCoinServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */; };
 		3AEBFD142256FAFF00B56973 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD132256FAFF00B56973 /* Constants.swift */; };
 		3AEBFD172256FD9000B56973 /* BitCoinRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBFD162256FD9000B56973 /* BitCoinRecord.swift */; };
@@ -70,6 +71,7 @@
 		3A542F3E2257E2E300C322BD /* MainVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+TableView.swift"; sourceTree = "<group>"; };
 		3A542F412259233000C322BD /* MainVC+RealtimeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+RealtimeCoordinator.swift"; sourceTree = "<group>"; };
 		3A542F49225932B700C322BD /* HistoricalBPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalBPIManager.swift; sourceTree = "<group>"; };
+		3A5605592278A9A800230AFB /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		3AEBFD112256FA2E00B56973 /* BitCoinServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinServiceHandler.swift; sourceTree = "<group>"; };
 		3AEBFD132256FAFF00B56973 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AEBFD162256FD9000B56973 /* BitCoinRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinRecord.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		3A357A9B2256F0370099EE51 = {
 			isa = PBXGroup;
 			children = (
+				3A5605592278A9A800230AFB /* Readme.md */,
 				3A4C99552270A89C00181AEA /* Podfile */,
 				3A357AA62256F0370099EE51 /* BitCoinApp */,
 				3A357ABB2256F0390099EE51 /* BitCoinAppTests */,
@@ -339,6 +342,7 @@
 			files = (
 				3A4C99562270A89C00181AEA /* Podfile in Resources */,
 				3AEBFD2022577F7000B56973 /* MainView.xib in Resources */,
+				3A56055A2278A9A800230AFB /* Readme.md in Resources */,
 				3A357AB22256F0390099EE51 /* LaunchScreen.storyboard in Resources */,
 				3A542F372257955D00C322BD /* TodayView.xib in Resources */,
 				3A357AAF2256F0390099EE51 /* Assets.xcassets in Resources */,
